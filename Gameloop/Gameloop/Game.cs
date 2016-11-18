@@ -8,14 +8,6 @@ namespace Gameloop
         public const int ScreenWidth = 50;
         public const int ScreenHeight = 50;
 
-        struct Character
-        {
-            public int Posx;
-            public int Posy;
-
-            public char Sprite;
-        }
-
         private Character player;
 
         public bool Over { get; }
@@ -29,6 +21,7 @@ namespace Gameloop
         {
             player.Posx = 5;
             player.Posy = 5;
+            player.Sprite = 'O';
         }
 
         internal void Update()
@@ -58,5 +51,13 @@ namespace Gameloop
         {
             canvas.Draw('0', player.Posx, player.Posy);
         }
+    }
+
+    struct Character
+    {
+        public int Posx;
+        public int Posy;
+
+        public char Sprite;
     }
 }
