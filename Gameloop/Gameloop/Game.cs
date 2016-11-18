@@ -8,8 +8,15 @@ namespace Gameloop
         public const int ScreenWidth = 50;
         public const int ScreenHeight = 50;
 
-        private static int posx;
-        private static int posy;
+        struct Character
+        {
+            public int Posx;
+            public int Posy;
+
+            public char Sprite;
+        }
+
+        private Character player;
 
         public bool Over { get; }
 
@@ -20,38 +27,36 @@ namespace Gameloop
 
         public void Initialize()
         {
-            posx = 5;
-            posy = 5;
+            player.Posx = 5;
+            player.Posy = 5;
         }
 
         internal void Update()
         {
             if (Keyboard.IsKeyDown(Key.Up))
             {
-                posy = posy - 1;
+                player.Posy = player.Posy - 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Down))
             {
-                posy = posy + 1;
+                player.Posy = player.Posy + 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Left))
             {
-                posx = posx - 1;
+                player.Posx = player.Posx - 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Right))
             {
-                posx = posx + 1;
+                player.Posx = player.Posx + 1;
             }
         }
 
         public void Draw(ConsoleCanvas canvas)
         {
-            canvas.Draw('0', posx, posy);
+            canvas.Draw('0', player.Posx, player.Posy);
         }
-
-        
     }
 }
