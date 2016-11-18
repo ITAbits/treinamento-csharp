@@ -6,7 +6,7 @@ namespace Gameloop
     public class ConsoleCanvas
     {
         private ConsoleCharInfo[,] _buff;
-        private IntPtr _handle;
+        private readonly IntPtr _handle;
 
         private readonly int _width, _height;
 
@@ -29,9 +29,6 @@ namespace Gameloop
                 CONSOLE_TEXTMODE_BUFFER,
                 IntPtr.Zero);
             SetConsoleActiveScreenBuffer(_handle);
-            //_screenBuffer = new ConsoleScreenBuffer();
-            //JConsole.SetActiveScreenBuffer(_screenBuffer);
-            //_screenBuffer.SetBufferSize(width, height);
             Clear();
         }
 
@@ -40,25 +37,23 @@ namespace Gameloop
             _buff = new ConsoleCharInfo[_width, _height];
         }
 
-        public void Draw(char c, int x, int y, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.White)
+        public void Draw(char c, int x, int y, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
-            _buff[x, y].UnicodeChar = c;
-            _buff[x, y].Foreground = foreground;
-            _buff[x, y].Background = background;
+            _buff[y, x].UnicodeChar = c;
+            _buff[y, x].Foreground = foreground;
+            _buff[y, x].Background = background;
         }
 
         public void Render()
         {
-            //_screenBuffer.Clear();
-            Coord bufferSize = new Coord((short)_buff.GetLength(1), (short)_buff.GetLength(0));
-            Coord bufferPos = new Coord(0, 0);
-            SmallRect writeRegion = new SmallRect((short)0, (short)0, (short)_buff.GetLength(1), (short)_buff.GetLength(0));
+            var bufferSize = new Coord((short)_buff.GetLength(1), (short)_buff.GetLength(0));
+            var bufferPos = new Coord(0, 0);
+            var writeRegion = new SmallRect(0, 0, (short)_buff.GetLength(1), (short)_buff.GetLength(0));
             WriteConsoleOutput(_handle, _buff, bufferSize, bufferPos, writeRegion);
             Clear();
         }
 
         // Thanks to Mischel.ConsoleDotNet for better understanding of using WinApi
-
         #region DLLImports
 
         [DllImport("kernel32.dll", SetLastError = true)]

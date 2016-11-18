@@ -4,16 +4,15 @@ namespace Gameloop
 {
     public class Program
     {
-        private const int Fps = 60;
-
-        private static void Main(string[] args)
+        [STAThread]
+        private static void Main()
         {
-            var canvas = new ConsoleCanvas(10, 10);
+            var canvas = new ConsoleCanvas(GameSettings.ScreenWidth, GameSettings.ScreenHeight);
             var game = new Game();
 
             game.Initialize();
 
-            while (true)
+            while (!game.Over)
             {
                 var start = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                 
@@ -24,7 +23,7 @@ namespace Gameloop
 
                 // Make fps constant
                 var deltaTime = start - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-                System.Threading.Thread.Sleep((int)(1000.0f / Fps - deltaTime));
+                System.Threading.Thread.Sleep((int)(1000.0f / GameSettings.Fps - deltaTime));
             }
         }
     }
