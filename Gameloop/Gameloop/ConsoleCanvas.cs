@@ -34,11 +34,15 @@ namespace Gameloop
 
         public void Clear()
         {
-            _buff = new ConsoleCharInfo[_width, _height];
+            _buff = new ConsoleCharInfo[_height, _width];
         }
 
         public void Draw(char c, int x, int y, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
+            if (x < 0 || x > _width - 1) return;
+            if (y < 0 || y > _height - 1) return;
+
+            // NOTE: Not working with all ascii
             _buff[y, x].UnicodeChar = c;
             _buff[y, x].Foreground = foreground;
             _buff[y, x].Background = background;
@@ -46,9 +50,9 @@ namespace Gameloop
 
         public void Render()
         {
-            var bufferSize = new Coord((short)_buff.GetLength(1), (short)_buff.GetLength(0));
+            var bufferSize = new Coord((short)(_width), (short)(_height));
             var bufferPos = new Coord(0, 0);
-            var writeRegion = new SmallRect(0, 0, (short)_buff.GetLength(1), (short)_buff.GetLength(0));
+            var writeRegion = new SmallRect(0, 0, (short)(_width - 1), (short)(_height - 1));
             WriteConsoleOutput(_handle, _buff, bufferSize, bufferPos, writeRegion);
             Clear();
         }

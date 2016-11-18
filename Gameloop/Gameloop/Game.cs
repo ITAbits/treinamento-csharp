@@ -28,28 +28,28 @@ namespace Gameloop
         {
             if (Keyboard.IsKeyDown(Key.Up))
             {
-                posy = (posy - 1 + 10) % 10;
+                posy = posy - 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Down))
             {
-                posy = (posy + 1) % 10;
+                posy = posy + 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Left))
             {
-                posx = (posx - 1 + 10) % 10;
+                posx = posx - 1;
             }
 
             if (Keyboard.IsKeyDown(Key.Right))
             {
-                posx = (posx + 1) % 10;
+                posx = posx + 1;
             }
         }
 
         public void Draw(ConsoleCanvas canvas)
         {
-            canvas.Draw('@', posx, posy);
+            canvas.Draw('0', posx, posy);
         }
 
         

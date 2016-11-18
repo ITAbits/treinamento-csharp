@@ -9,7 +9,7 @@ namespace Gameloop
     public static class GameSettings
     {
         public static readonly int Fps = 60;
-        public static readonly int ScreenWidth = 50;
-        public static readonly int ScreenHeight = 50;
+        public static readonly int ScreenWidth = 100;
+        public static readonly int ScreenHeight = 60;
     }
 }
