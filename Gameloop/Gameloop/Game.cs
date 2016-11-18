@@ -8,12 +8,40 @@ namespace Gameloop
         public const int ScreenWidth = 50;
         public const int ScreenHeight = 50;
 
-        struct Character
+        class Character
         {
-            public int Posx;
-            public int Posy;
+            public int Posx = 5;
+            public int Posy = 5;
 
-            public char Sprite;
+            public char Sprite = 'O';
+
+            public void Update()
+            {
+                if (Keyboard.IsKeyDown(Key.Up))
+                {
+                    Posy = Posy - 1;
+                }
+
+                if (Keyboard.IsKeyDown(Key.Down))
+                {
+                    Posy = Posy + 1;
+                }
+
+                if (Keyboard.IsKeyDown(Key.Left))
+                {
+                    Posx = Posx - 1;
+                }
+
+                if (Keyboard.IsKeyDown(Key.Right))
+                {
+                    Posx = Posx + 1;
+                }
+            }
+
+            public void Draw(ConsoleCanvas canvas)
+            {
+                canvas.Draw(Sprite, Posx, Posy);
+            }
         }
 
         private Character player;
@@ -27,36 +55,17 @@ namespace Gameloop
 
         public void Initialize()
         {
-            player.Posx = 5;
-            player.Posy = 5;
+            player = new Character();
         }
 
         internal void Update()
         {
-            if (Keyboard.IsKeyDown(Key.Up))
-            {
-                player.Posy = player.Posy - 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Down))
-            {
-                player.Posy = player.Posy + 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Left))
-            {
-                player.Posx = player.Posx - 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Right))
-            {
-                player.Posx = player.Posx + 1;
-            }
+            player.Update();
         }
 
         public void Draw(ConsoleCanvas canvas)
         {
-            canvas.Draw('0', player.Posx, player.Posy);
+            player.Draw(canvas);
         }
     }
 }
