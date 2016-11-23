@@ -3,7 +3,7 @@ O objetivo desse tutorial é transportar a sintaxe de C/C++ aprendida nos treina
 
 ## Tópicos
 * [Primeiro Projeto (Windows)](Primeiro-Projeto-(Windows).md)
-* [Principais Diferencas](Primeiro-Projeto-(Windows).md)
+* [Principais Diferencas](Principais-Diferencas.md)
 
 ## FAQ
 
