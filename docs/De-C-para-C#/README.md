@@ -1,6 +1,12 @@
 # Objetivo
 O objetivo desse tutorial é transportar a sintaxe de C/C++ aprendida nos treinamentos anteriores para C#. Portanto, não cobre a parte de Programação Orientada a Objetos.
 
+## Tópicos
+* [Primeiro Projeto (Windows)](Primeiro-Projeto-(Windows).md)
+* [Principais Diferencas](Principais-Diferencas.md)
+
+## FAQ
+
 ### Por que usar C#? Por que não C?
 Pois a principal ferramenta que a ITABits usa para desenvolvimento de jogos é a engine [Unity](https://unity3d.com/), e C# é sua principal linguagem de desenvolvimento.
 
