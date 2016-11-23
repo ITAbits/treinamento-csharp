@@ -1,5 +1,6 @@
 ## Indice
-* Tipos
+* [Tipos](#tipos)
+* [Entrada e Saida](#entrada-e-saida)
 
 
 ## Tipos
@@ -25,3 +26,5 @@ Além desses, temos novos tipos (que são emprestados do C++):
 _bool_: é um tipo booleano, que pode assumir os valores lógicos de _true_ e _false_, em vez de usar 0 e 1.
 
 _string_: que representa uma cadeia infinita de caracteres, com memória alocada dinamicamente). Esse tipo facilita muito por que deixa de lado o uso de um array de _char_'s para strings. Trabalhar com _string_ de C# é muito intuitivo: para concatenar, basta somá-las, com +.  No código _string_ são variaveis declaradas entre "".
+
+## Entrada e Saida
