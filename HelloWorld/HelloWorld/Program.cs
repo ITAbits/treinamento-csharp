@@ -18,6 +18,9 @@ namespace HelloWorld
             // Ainda é possível aplicar formatação.
             Console.WriteLine("{1:g} {0:n}", variavel1, variavel2);
             Console.Read();
+
+
+            Console.ReadKey()
         }
     }
 }
