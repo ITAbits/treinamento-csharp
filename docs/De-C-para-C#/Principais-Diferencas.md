@@ -1,6 +1,8 @@
 ## Indice
 * [Tipos](#tipos)
 * [Entrada e Saida](#entrada-e-saida)
+* [Controle de Fluxo](#controle-de-fluxo)
+* [Variaveis Indexadas](#variaveis-indexadas)
 
 ## Tipos
 
@@ -69,3 +71,64 @@ int i = int.Parse(Console.ReadLine());
 string si = i.ToString();
 string sf = f.ToString();
 ```
+
+## Controle de Fluxo
+
+Os comandos _if_, _else_, _switch_, _while_ e _for_ funcionam da mesma forma que em C.
+
+## Variaveis Indexadas
+
+A forma de se declarar variaveis indexadas é um pouco diferente:
+
+```cs
+// Isso é o equivalente em cs de
+// int array[100];
+int[] array = new int[100];
+```
+Em C#, arrays são alocados dinamicamente (esse _new_ é análogo ao de C++). _int[] array_ é apenas a declaração de uma variável do tipo array de inteiros. _new int[100]_ é o que cria o array na memória (assim como o malloc). Esse array é análogo a um ponteiro, mas é chamado de referencia, pois a principio C# não trabalha com ponteiros.
+
+Ponteiros são uma fonte muito comum de bugs, por isso linguagens mais modernas abandonaram tal conceito pelo de referência. Referências são no fundo ponteiros, mas que não permitem acesso direto à memoria, a diferença entre o que é o ponteiro e a variável em si fica escondida do programador. Com o uso, a diferença ficará mais clara. O C# se encarrega de buscar o que for preciso no lugar certo da memória.
+
+A forma de acessar posições de um _array_ continua a mesma. Para declarar um _array_ com valores no meio do código, basta fazer:
+
+````cs
+string[] a = new string[] {"bla", "lalala", "vvvvvv"};
+```
+
+Para iterar sobre arrays, C# tem um tipo especial de _for_ , o _foreach_. O _foreach_ vai se mostrar cada vez mais util com o uso de C#, pois serve para iterar sobre todo tipo de coleção nessa linguagem. Coleções são tipos que guardam conjuntos de variáveis, sendo o _array_ uma delas. A sintaxe do _foreach_ é:
+
+```cs
+foreach(int inteiro in arrayInteiros) // Itera sobre cada elemento arrayInteiros[i]
+{
+  /* Aqui dentro a váriavel de iteração assume o nome que foi dado (inteiro) */
+  Console.Write(inteiro);
+}
+```
+
+A declaração de matrizes pode ser feita de duas formas:
+
+````cs
+// Variável indexada multidimensional
+
+// Inicialização
+int[,] matriz = new int[3, 3];
+
+// Acesso a elemento:
+matriz[2, 2] = 0;
+```
+
+````cs
+// Array de arrays
+
+// Inicialização
+int[][] matriz = new int[3][];
+for(int i = 0; i matrix.Length; i++) 
+{
+  matriz[i] = new int[3];
+}
+
+// Acesso a elemento:
+matriz[2][2] = 0;
+```
+
+As variáveis indexadas multidimensionais também podem ser iteradas com _foreach_.
