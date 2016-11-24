@@ -2,7 +2,6 @@
 * [Tipos](#tipos)
 * [Entrada e Saida](#entrada-e-saida)
 
-
 ## Tipos
 
 C# é uma linguagem fortemente tipada. Isso significa que qualquer variavel declarada terá um tipo e não será possivel alterá-lo. Os tipos primitivos de C tem todos equivalentes em C#. Em C# as precisões são bem-definidas, diferente de C, em que estas dependem do compilador. Seguem os tipos já conhecidos:
@@ -44,6 +43,9 @@ Console.WriteLine("{1:g} {0:n}", variavel1, variavel2);
 Console.Read();
 ```
 
+Saída:
+![](img/saidawrite.png)
+
 Assim, o uso do Console.Write() é mais confortável. Para os casos em que se deseja aplicar a formatação, pode-se usar o estilo de formatação do C#, como feito no ultimo _Console.WriteLine_.
 
 Quanto ao input, existem algumas opções:
@@ -52,7 +54,7 @@ Quanto ao input, existem algumas opções:
 // Análogo a um scanf("%c", &caractere).
 // Percebe-se que o Console.Read() precisa ser 'castado' (transformado) em char.
 // Para castar uma variável para outro tipo, basta colocar o tipo novo entre parentesis antes da variável.
-char c = (char) Console.Read(); 
+char c = (char) Console.Read();
 
 // Análogo a um gets(), isto é, lê uma linha até encontrar um "/n"
 string str = Console.ReadLine();
@@ -67,5 +69,3 @@ int i = int.Parse(Console.ReadLine());
 string si = i.ToString();
 string sf = f.ToString();
 ```
-
-

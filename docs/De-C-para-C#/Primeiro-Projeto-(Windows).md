@@ -5,10 +5,10 @@ Antes de tudo, é altamente recomendado instalar o **Visual Studio**, que será 
 O Visual Studio é uma IDE(_integrated development environment_), ou seja, é um programa com ferramentas integradas para auxiliar a programação. É o equivalente ao Code::Blocks e ao Borland para C#, só que **muito** melhor.
 
 Após a instalação, quando se abre o Visual Studio têm-se a seguinte tela:
-![](https://github.com/ITAbits/treinamento-csharp/blob/master/img/vshome.png)
+![](img/vshome.png)
 
 Para a criação do programa, é necessário primeiramente se criar um projeto (que é basicamente a forma do Visual Studio de facilitar a integração de varios arquivos em um programa só). Vá em **File->New->Project...** Será aberta uma janela como a seguinte:
-![](https://github.com/ITAbits/treinamento-csharp/blob/master/img/vsnewproject.png)
+![](img/vsnewproject.png)
 
 Escolha **Console Application** e dê um nome para o projeto (foi colocado _HelloWorld_). Então clique em **OK**.
 
@@ -44,9 +44,9 @@ Console.Write("Hello World!");
 
 Pode-se perceber que quando se comeca a digitar algo aparecem diversas sugestoes, esse é o Visual Studio e seu _Intellisense_ em ação. **TAB**, **ESPAÇO** ou **ENTER** completam com a sugestão dada, que pode ser simplesmente ignorada se continuar digitando. O _Intellisense_ será muito útil pra saber os possiveis metodos a se usar em diversos momentos.
 
-Aperte F5 ou a setinha verde para rodar o programa... 
+Aperte F5 ou a setinha verde para rodar o programa...
 
-Ele deve ter sumido antes de dar para ler o output. Adicione: 
+Ele deve ter sumido antes de dar para ler o output. Adicione:
 
 ```cs
 // Acochambração analoga ao do scanf() no final...
@@ -54,7 +54,7 @@ Console.Read();
 ```
 
 A seguinte saída é a esperada:
-![](https://github.com/ITAbits/treinamento-csharp/blob/master/img/helloworld.png)
+![](img/helloworld.png)
 
 Pronto! O primeiro projeto em C#, o clássico gello world.
 

@@ -15,12 +15,10 @@ namespace HelloWorld
             Console.WriteLine(variavel1);
             Console.WriteLine(5);
             Console.WriteLine("A variável 1 vale " + variavel1);
+            
             // Ainda é possível aplicar formatação.
             Console.WriteLine("{1:g} {0:n}", variavel1, variavel2);
             Console.Read();
-
-
-            Console.ReadKey()
         }
     }
 }
