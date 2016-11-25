@@ -24,4 +24,4 @@ Esse tutorial foi fortemente copiado do tutorial antigo do site da ITABits: http
 
 O autor do original foi: Marcos Ricardo Omena de Albuquerque Maximo, revisado por: Vinícius Canaã Medeiros Ruela
 
-O autor do atual foi: @Ghust1995
+O autor do atual foi: Gustavo Ceci Guimaraes
