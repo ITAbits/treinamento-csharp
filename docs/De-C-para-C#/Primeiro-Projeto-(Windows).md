@@ -56,7 +56,7 @@ Console.Read();
 A seguinte saída é a esperada:
 ![](img/helloworld.png)
 
-Pronto! O primeiro projeto em C#, o clássico gello world.
+Pronto! O primeiro projeto em C#, o clássico hello world.
 
 Você deve ter percebido que o analogo em C# do printf() é o Console.Write() e do scanf() o Console.Read(). Durante o resto do tutorial serão mostradas as outras principais diferenças na sintaxe.
 
