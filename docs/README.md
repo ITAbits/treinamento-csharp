@@ -1,4 +1,4 @@
-# Treinamento C\#
+# Treinamento C Sharp
 
 ## Introducao
 O objetivo desses tutoriais é poder ao fim dele desenvolver um jogo simples (Mario, Bomberman, Pac-Man, Snake) no terminal.
