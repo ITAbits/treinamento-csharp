@@ -3,6 +3,7 @@
 * [Entrada e Saida](#entrada-e-saida)
 * [Controle de Fluxo](#controle-de-fluxo)
 * [Variaveis Indexadas](#variaveis-indexadas)
+* [List](#list)
 
 ## Tipos
 
@@ -132,3 +133,33 @@ matriz[2][2] = 0;
 ```
 
 As variáveis indexadas multidimensionais também podem ser iteradas com _foreach_.
+
+## List
+
+Muitas vezes existem arrays num programa que se beneficiariam muito de não ter um tamanho constante. Por exemplo, em um jogo, poderia haver uma lista de inimigos, que aparecem e desaparecem. Normalmente a solução é fazer um array com um tamanho suficientemente grande para não estourar, que muitas vezes é um desperdício de memória. Para resolver isso, C# tem o tipo _List_.
+
+Para que o compilador saiba do que se trata a palavra _List_ é necessário adicionar, logo no começo do código a seguinte linha:
+
+```cs
+using System.Collections.Generic;
+```
+
+É muito provavel que a propria IDE dê como sugestão a adição dessa linha quando se escrever a palavra List. _using_ é como um link para onde está a implementação de alguma biblioteca ou _framework_.
+
+Para criar e usar uma list, segue um exemplo:
+
+```cs
+// Declara e inicializa uma list de inteiros:
+List<int> inteiros = new List<int>();
+
+// Adicionar elementos:
+inteiros.Add(1);
+inteiros.Add(2);
+inteiros.Add(3);
+
+// Remover elementos:
+inteiros.Remove(1); // Remove o primeiro 1 que encontrar
+inteiros.RemoveAt(0); // Remove o elemento na posição 0
+```
+
+Por enquanto é preciso "aceitar" que a lista de um tipo qualquer é definida com List\<Tipo\>. O significado dessa notação é bastante complexo, e provavelmente só será tratado em algum tutorial futuro de C# avançado, no entanto o seu uso é bem simples, e relativamente intuitivo.
