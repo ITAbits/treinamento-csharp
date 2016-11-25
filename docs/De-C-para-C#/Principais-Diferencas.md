@@ -4,6 +4,7 @@
 * [Controle de Fluxo](#controle-de-fluxo)
 * [Variaveis Indexadas](#variaveis-indexadas)
 * [List](#list)
+* [Funcoes](#funcoes)
 
 ## Tipos
 
@@ -163,3 +164,35 @@ inteiros.RemoveAt(0); // Remove o elemento na posição 0
 ```
 
 Por enquanto é preciso "aceitar" que a lista de um tipo qualquer é definida com List\<Tipo\>. O significado dessa notação é bastante complexo, e provavelmente só será tratado em algum tutorial futuro de C# avançado, no entanto o seu uso é bem simples, e relativamente intuitivo.
+
+## Funcoes
+
+Sintaxe semelhante à de C:
+
+```cs
+static void Main(string[] args)
+{
+  PrintaCoisa(2.0f);
+  PrintaCoisa(10);
+  PrintaCoisa();
+}
+
+static void PrintaCoisa(float f)
+{
+  Console.WriteLine("float: " + f);
+}
+
+static void PrintaCoisa(int i)
+{
+  Console.WriteLine("int: " + i);
+}
+
+static void PrintaCoisa()
+{
+  Console.WriteLine("nada");
+}
+```
+
+Para usar os métodos de C# de forma análoga ao que é conhecido de C, é preciso colocar a palavra _static_ antes da declaração de cada método. Isso é mais uma das coisas que fará mais sentido após o entendimento de POO.
+
+Em C# é possível tambem declarar vários métodos com o mesmo nome, desde que a lista de argumentos( em termos da ordem tos tipos de argumentos) sejam diferentes. Isso se chama _overload_ de métodos. O compilador descobre qual método deve chamar a partir dos parametros passados.
