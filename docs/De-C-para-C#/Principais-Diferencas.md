@@ -5,6 +5,7 @@
 * [Variaveis Indexadas](#variaveis-indexadas)
 * [List](#list)
 * [Funcoes](#funcoes)
+* [Struct](#struct)
 
 ## Tipos
 
@@ -196,3 +197,24 @@ static void PrintaCoisa()
 Para usar os métodos de C# de forma análoga ao que é conhecido de C, é preciso colocar a palavra _static_ antes da declaração de cada método. Isso é mais uma das coisas que fará mais sentido após o entendimento de POO.
 
 Em C# é possível tambem declarar vários métodos com o mesmo nome, desde que a lista de argumentos( em termos da ordem tos tipos de argumentos) sejam diferentes. Isso se chama _overload_ de métodos. O compilador descobre qual método deve chamar a partir dos parametros passados.
+
+## Struct
+
+C# dá suporte a _structs_, que são muito semelhantes às de C. Exemplo de uso:
+
+```cs
+struct Coordenadas
+{
+  public int X; // public para ser visível externamente
+  public int Y;
+}
+
+static void Main()
+{
+  Coordenadas c;
+  c.X = 2;
+  c.Y = 3;
+}
+```
+
+As variáveis que precisam ser acessadas fora da struct tem que ser marcadas com _public_. Dado que o conceito de classe (_class_) amplia o de _struct_, você na prática usará mais class, deixando para _struct_ casos de estruturas bem simples, como coordenadas bidimensionais.
