@@ -8,7 +8,8 @@ namespace Gameloop
         public const int ScreenWidth = 50;
         public const int ScreenHeight = 50;
 
-        private Character player;
+        private Player player1;
+        private Player player2;
 
         public bool Over { get; }
 
@@ -19,53 +20,20 @@ namespace Gameloop
 
         public void Initialize()
         {
-            player = new Character();
+            player1 = new Player('O', new PlayerInputMapping(Key.W, Key.S, Key.A, Key.D), 5, 5);
+            player2 = new Player('U', new PlayerInputMapping(Key.I, Key.K, Key.J, Key.L), 15, 5);
         }
 
         internal void Update()
         {
-            player.Update();
+            player1.Update();
+            player2.Update();
         }
 
         public void Draw(ConsoleCanvas canvas)
         {
-            player.Draw(canvas);
-        }
-    }
-
-    class Character
-    {
-        public int Posx = 5;
-        public int Posy = 5;
-
-        public char Sprite = 'O';
-
-        public void Update()
-        {
-            if (Keyboard.IsKeyDown(Key.Up))
-            {
-                Posy = Posy - 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Down))
-            {
-                Posy = Posy + 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Left))
-            {
-                Posx = Posx - 1;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Right))
-            {
-                Posx = Posx + 1;
-            }
-        }
-
-        public void Draw(ConsoleCanvas canvas)
-        {
-            canvas.Draw(Sprite, Posx, Posy);
+            player1.Draw(canvas);
+            player2.Draw(canvas);
         }
     }
 }
