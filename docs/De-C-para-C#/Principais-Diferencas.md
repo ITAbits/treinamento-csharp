@@ -110,7 +110,7 @@ foreach(int inteiro in arrayInteiros) // Itera sobre cada elemento arrayInteiros
 
 A declaração de matrizes pode ser feita de duas formas:
 
-````cs
+```cs
 // Variável indexada multidimensional
 
 // Inicialização
@@ -120,7 +120,7 @@ int[,] matriz = new int[3, 3];
 matriz[2, 2] = 0;
 ```
 
-````cs
+```cs
 // Array de arrays
 
 // Inicialização
