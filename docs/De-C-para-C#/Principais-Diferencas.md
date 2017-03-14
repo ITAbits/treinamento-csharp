@@ -94,7 +94,7 @@ Ponteiros são uma fonte muito comum de bugs, por isso linguagens mais modernas 
 
 A forma de acessar posições de um _array_ continua a mesma. Para declarar um _array_ com valores no meio do código, basta fazer:
 
-````cs
+```cs
 string[] a = new string[] {"bla", "lalala", "vvvvvv"};
 ```
 
